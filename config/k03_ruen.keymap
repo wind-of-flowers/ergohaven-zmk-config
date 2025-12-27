@@ -104,8 +104,8 @@
                 <&kp LEFT_ALT>;
 
             label = "ALT_TAB";
-            wait-ms = <200>;
-            tap-ms = <40>;
+            wait-ms = <80>;
+            tap-ms = <20>;
         };
     };
 
@@ -152,11 +152,11 @@
 
         nav {
             bindings = <
-&kp F11  &kp F1      &kp F2            &kp F3         &kp F4            &kp F5                                         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10     &kp F12
-&trans   &kp LS(N1)  &kp LS(NUMBER_2)  &kp LS(UP)     &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                               &kp LS(N6)     &kp LS(RU_N7)  &kp LS(RU_N8)  &kp LS(RU_N9)  &kp LS(N0)  &kp RIGHT_BRACKET
-&trans   &kp N1      &kp NUMBER_2      &kp NUMBER_3   &kp NUMBER_4      &kp NUMBER_5                                   &kp N6         &kp RU_N7      &kp RU_N8      &kp RU_N9      &kp N0      &trans
-&trans   &trans      &kp MINUS         &kp LS(SLASH)  &trans            &trans            &trans    &trans             &trans         &trans         &kp SLASH      &kp EQUAL      &trans      &kp LS(LC(Z))
-                     &trans            &trans         &trans            &trans            &trans    &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE     &trans         &trans
+&kp F11  &kp F1      &kp F2            &kp F3            &kp F4            &kp F5                                         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10     &kp F12
+&trans   &kp LS(N1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                               &kp LS(N6)     &kp LS(RU_N7)  &kp LS(RU_N8)  &kp LS(RU_N9)  &kp LS(N0)  &kp RIGHT_BRACKET
+&trans   &kp N1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp NUMBER_5                                   &kp N6         &kp RU_N7      &kp RU_N8      &kp RU_N9      &kp N0      &trans
+&trans   &trans      &kp MINUS         &kp LS(SLASH)     &trans            &trans            &trans    &trans             &trans         &trans         &kp SLASH      &kp EQUAL      &trans      &kp LS(LC(Z))
+                     &trans            &trans            &trans            &trans            &trans    &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE     &trans         &trans
             >;
 
             display-name = "Nav";
