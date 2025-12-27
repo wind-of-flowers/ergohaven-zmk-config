@@ -89,6 +89,24 @@
             wait-ms = <0>;
             tap-ms = <30>;
         };
+
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_tap>,
+                <&sk LEFT_ALT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALT_TAB";
+            wait-ms = <200>;
+            tap-ms = <40>;
+        };
     };
 
     keymap {
@@ -134,11 +152,11 @@
 
         nav {
             bindings = <
-&kp F11  &kp F1      &kp F2            &kp F3        &kp F4            &kp F5                                         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10     &kp F12
-&trans   &kp LS(N1)  &kp LS(NUMBER_2)  &kp LS(UP)    &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                               &kp LS(N6)     &kp LS(RU_N7)  &kp LS(RU_N8)  &kp LS(RU_N9)  &kp LS(N0)  &kp RIGHT_BRACKET
-&trans   &kp N1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5                                   &kp N6         &kp RU_N7      &kp RU_N8      &kp RU_N9      &kp N0      &trans
-&trans   &trans      &kp MINUS         &kp COMMA     &trans            &trans            &trans    &trans             &trans         &trans         &kp DOT        &kp EQUAL      &trans      &kp LS(LC(Z))
-                     &trans            &trans        &trans            &trans            &trans    &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE     &trans         &trans
+&kp F11  &kp F1      &kp F2            &kp F3         &kp F4            &kp F5                                         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10     &kp F12
+&trans   &kp LS(N1)  &kp LS(NUMBER_2)  &kp LS(UP)     &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                               &kp LS(N6)     &kp LS(RU_N7)  &kp LS(RU_N8)  &kp LS(RU_N9)  &kp LS(N0)  &kp RIGHT_BRACKET
+&trans   &kp N1      &kp NUMBER_2      &kp NUMBER_3   &kp NUMBER_4      &kp NUMBER_5                                   &kp N6         &kp RU_N7      &kp RU_N8      &kp RU_N9      &kp N0      &trans
+&trans   &trans      &kp MINUS         &kp LS(SLASH)  &trans            &trans            &trans    &trans             &trans         &trans         &kp SLASH      &kp EQUAL      &trans      &kp LS(LC(Z))
+                     &trans            &trans         &trans            &trans            &trans    &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE     &trans         &trans
             >;
 
             display-name = "Nav";
@@ -147,7 +165,7 @@
         sym_en {
             bindings = <
 &trans  &trans  &trans         &trans  &trans  &trans                              &trans             &trans    &trans    &trans         &trans  &trans
-&trans  &trans  &trans         &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &trans    &kp UP    &trans         &trans  &trans
+&trans  &trans  &trans         &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &trans    &kp UP    &alt_tab       &trans  &trans
 &trans  &trans  &trans         &trans  &trans  &kp HOME                            &kp END            &kp LEFT  &kp DOWN  &kp RIGHT      &trans  &trans
 &trans  &trans  &kp LS(MINUS)  &trans  &trans  &kp LS(LC(LEFT))  &trans    &trans  &kp LC(LS(RIGHT))  &trans    &trans    &kp LS(EQUAL)  &trans  &trans
                 &trans         &trans  &trans  &mo 5             &trans    &trans  &trans             &trans    &trans    &trans
