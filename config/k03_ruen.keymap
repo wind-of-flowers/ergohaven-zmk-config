@@ -12,6 +12,14 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        alt_tab_behavior: alt_tab_behavior {
+            compatible = "zmk,behavior-sticky-key";
+            label = "ALT_TAB_BEHAVIOR";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <500>;
+        };
     };
 
     combos {
@@ -107,6 +115,20 @@
             wait-ms = <80>;
             tap-ms = <20>;
         };
+
+        alttabnew: alttabnew {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &alt_tab_behavior MACRO_PLACEHOLDER>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+
+            label = "ALTTABNEW";
+        };
     };
 
     keymap {
@@ -164,11 +186,11 @@
 
         sym_en {
             bindings = <
-&trans  &trans  &trans         &trans  &trans  &trans                              &trans             &trans    &trans    &trans         &trans  &trans
-&trans  &trans  &trans         &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &trans    &kp UP    &alt_tab       &trans  &trans
-&trans  &trans  &trans         &trans  &trans  &kp HOME                            &kp END            &kp LEFT  &kp DOWN  &kp RIGHT      &trans  &trans
-&trans  &trans  &kp LS(MINUS)  &trans  &trans  &kp LS(LC(LEFT))  &trans    &trans  &kp LC(LS(RIGHT))  &trans    &trans    &kp LS(EQUAL)  &trans  &trans
-                &trans         &trans  &trans  &mo 5             &trans    &trans  &trans             &trans    &trans    &trans
+&trans  &trans  &trans         &trans  &trans  &trans                              &trans             &trans                       &trans    &trans                   &trans  &trans
+&trans  &trans  &trans         &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &alttabnew LEFT_ALT LS(TAB)  &kp UP    &alttabnew LEFT_ALT TAB  &trans  &trans
+&trans  &trans  &trans         &trans  &trans  &kp HOME                            &kp END            &kp LEFT                     &kp DOWN  &kp RIGHT                &trans  &trans
+&trans  &trans  &kp LS(MINUS)  &trans  &trans  &kp LS(LC(LEFT))  &trans    &trans  &kp LC(LS(RIGHT))  &trans                       &trans    &kp LS(EQUAL)            &trans  &trans
+                &trans         &trans  &trans  &mo 5             &trans    &trans  &trans             &trans                       &trans    &trans
             >;
 
             display-name = "Symbols";
