@@ -18,7 +18,7 @@
             label = "ALT_TAB_BEHAVIOR";
             bindings = <&kp>;
             #binding-cells = <1>;
-            release-after-ms = <500>;
+            release-after-ms = <300>;
         };
     };
 
