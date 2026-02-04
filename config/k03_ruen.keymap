@@ -124,7 +124,7 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &alt_tab_behavior MACRO_PLACEHOLDER>,
-                <&macro_press>,
+                <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
 
             label = "ALTTABNEW";
