@@ -193,11 +193,11 @@
 
         sym_en {
             bindings = <
-&trans  &trans  &trans         &trans  &trans  &trans                              &trans             &trans                       &trans    &trans                   &trans           &trans
-&trans  &trans  &trans         &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &alttabnew LEFT_ALT LS(TAB)  &kp UP    &alttabnew LEFT_ALT TAB  &kp PRINTSCREEN  &trans
-&trans  &trans  &trans         &trans  &trans  &kp HOME                            &kp END            &kp LEFT                     &kp DOWN  &kp RIGHT                &trans           &trans
-&trans  &trans  &kp LS(MINUS)  &trans  &trans  &kp LS(LC(LEFT))  &trans    &trans  &kp LC(LS(RIGHT))  &trans                       &trans    &kp LS(EQUAL)            &trans           &trans
-                &trans         &trans  &trans  &mo 5             &trans    &trans  &trans             &trans                       &trans    &trans
+&trans  &trans           &trans             &trans  &trans  &trans                              &trans             &trans                       &trans    &trans                   &trans           &trans
+&trans  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans  &trans  &kp LS(HOME)                        &kp LS(END)        &alttabnew LEFT_ALT LS(TAB)  &kp UP    &alttabnew LEFT_ALT TAB  &kp PRINTSCREEN  &trans
+&trans  &trans           &trans             &trans  &trans  &kp HOME                            &kp END            &kp LEFT                     &kp DOWN  &kp RIGHT                &trans           &trans
+&trans  &trans           &kp LS(MINUS)      &trans  &trans  &kp LS(LC(LEFT))  &trans    &trans  &kp LC(LS(RIGHT))  &trans                       &trans    &kp LS(EQUAL)            &trans           &trans
+                         &trans             &trans  &trans  &mo 5             &trans    &trans  &trans             &trans                       &trans    &trans
             >;
 
             display-name = "Symbols";
