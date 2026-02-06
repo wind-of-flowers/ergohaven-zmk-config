@@ -6,13 +6,13 @@
 
 / {
     behaviors {
-        mo1_with_cancel: mo1_with_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&cancel_alt_tab>;
-        };
+    mo3_with_cancel: mo3_with_cancel {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo 3>, <&cancel_alt_tab>;
+    };
 
         alt_tab: alt_tab {
             compatible = "zmk,behavior-sticky-key";
