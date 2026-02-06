@@ -6,26 +6,13 @@
 
 / {
     behaviors {
-        mo3_with_cancel: mo3_with_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo 3>, <&cancel_alt_tab>;
-        };
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <0>;
-            bindings = <&kp LALT>;
-            lazy;
-        };
-
-        cancel_alt_tab: cancel_alt_tab {
-            compatible = "zmk,behavior-sticky-key-cancel";
-            #binding-cells = <0>;
-            bindings = <&alt_tab>;
-        };
+    alt_tab: alt_tab {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <0>;
+        bindings = <&kp LALT>;
+        release-after-ms = <300>;
+        lazy;
+    };
 
         enc_vol: enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
@@ -72,17 +59,18 @@
     };
 
     macros {
-        alttab_next: alttab_next {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&alt_tab &kp TAB>;
-        };
 
-        alttab_prev: alttab_prev {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&alt_tab &kp S>;
-        };
+    alttab_next: alttab_next {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&alt_tab &kp TAB>;
+    };
+
+    alttab_prev: alttab_prev {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&alt_tab &kp S-TAB>;
+    };
 
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
