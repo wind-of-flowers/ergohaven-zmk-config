@@ -48,6 +48,14 @@
             bindings = <&kp LA(LEFT_SHIFT)>;
             key-positions = <45 46>;
         };
+
+        sticky_shift {
+            bindings = <&none>;
+            key-positions = <19 20>;
+            slow-release;
+            timeout-ms = <45>;
+            require-prior-idle-ms = <120>;
+        };
     };
 
     macros {
